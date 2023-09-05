@@ -1,0 +1,19 @@
+.flag-list-section{
+    display: flex;
+}
+
+.flag-row{
+    display: inline;
+}
+
+.flag-row li{
+    display: inline;
+    border: solid black 1px;
+    border-radius: 50px;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.flag-row li:hover{
+    background-color: whitesmoke;
+}
