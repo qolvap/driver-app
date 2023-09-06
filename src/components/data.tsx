@@ -2,19 +2,19 @@ import React from 'react';
 
 const data = {
   trasaPlUk: [
-    { name: 'Germany', emoji: '🇩🇪' },
-    { name: 'Nederlands', emoji: '🇳🇱' },
-    { name: 'Belgium', emoji: '🇧🇪' },
-    { name: 'France', emoji: '🇫🇷' },
-    { name: 'United Kindom', emoji: '🇬🇧' },
+    { id:1, name: 'Germany', emoji: '🇩🇪' },
+    { id:2, name: 'Nederlands', emoji: '🇳🇱' },
+    { id:3, name: 'Belgium', emoji: '🇧🇪' },
+    { id:4, name: 'France', emoji: '🇫🇷' },
+    { id:5, name: 'United Kindom', emoji: '🇬🇧' },
   ],
 
   trasaPlEs: [
-    { name: 'Germany', emoji: '🇩🇪' },
-    { name: 'Nederlands', emoji: '🇳🇱' },
-    { name: 'Belgium', emoji: '🇧🇪' },
-    { name: 'France', emoji: '🇫🇷' },
-    { name: 'Spain', emoji: '🇪🇸' },
+    { id:1, name: 'Germany', emoji: '🇩🇪' },
+    { id:2, name: 'Nederlands', emoji: '🇳🇱' },
+    { id:3, name: 'Belgium', emoji: '🇧🇪' },
+    { id:4, name: 'France', emoji: '🇫🇷' },
+    { id:5, name: 'Spain', emoji: '🇪🇸' },
   ],
 };
 
