@@ -12,6 +12,8 @@ const FlagList: React.FC = () => {
   const [clickedEmojis, setClickedEmojis] = useState<{ emoji: string; timestamp: string }[]>([]);
   const [currentEmojiIndex, setCurrentEmojiIndex] = useState(0);
   const [isRouteStarted, setIsRouteStarted] = useState(false);
+  const [comment, setComment] = useState<string>('');
+  const [submittedComment, setSubmittedComment] = useState<string | null>(null);
 
   const handleStartClick = () => {
     setIsRouteStarted(true);
@@ -31,6 +33,17 @@ const FlagList: React.FC = () => {
       });
       setClickedEmojis((prevEmojis) => [...prevEmojis, { emoji: 'END', timestamp: currentTime }]);
       setIsRouteStarted(false);
+    }
+  };
+
+  const handleCommentChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setComment(e.target.value);
+  };
+
+  const handleSubmitComment = () => {
+    if (comment.trim()) {
+      setSubmittedComment(comment);
+      setComment('');
     }
   };
 
@@ -79,9 +92,21 @@ const FlagList: React.FC = () => {
             </h4>
           </li>
         </ul>
+     
         <button className="end-route" onClick={handleEndClick}>
           END
         </button>
+
+        <input
+          type="text"
+          placeholder="NOTES"
+          value={comment}
+          onChange={handleCommentChange}
+          maxLength={200}
+        />
+        <button onClick={handleSubmitComment}>Submit</button>
+        {submittedComment && <p>Коментар: {submittedComment}</p>} 
+
       </div>
       <div></div>
       <div className="flag-row">
@@ -109,6 +134,7 @@ const FlagList: React.FC = () => {
 };
 
 export default FlagList;
+
 
 
 
