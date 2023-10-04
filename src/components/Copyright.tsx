@@ -1,7 +1,7 @@
 import React from 'react';
 
 const CopyrightNotice: React.FC = () => {
-    const currentYear = new Date().getFullYear(); // Отримуємо поточний рік
+    const currentYear = new Date().getFullYear();
   
     return (
       <div>
