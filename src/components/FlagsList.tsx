@@ -15,7 +15,7 @@ const FlagList: React.FC = () => {
   const [comment, setComment] = useState<string>('');
   const [submittedComment, setSubmittedComment] = useState<string | null>(null);
 
-  const handleStartClick = () => {
+  const handleStartClick = () => { 
     setIsRouteStarted(true);
 
     if (!clickedEmojis.length) {
