@@ -65,7 +65,7 @@ const FlagList: React.FC = () => {
   return (
     <div className="flag-list-section">
       <div className="flag-row">
-        <h2>Trasa Pl - De</h2>
+        <h2>Trasa PL - UK</h2>
         <button className="start-route" onClick={handleStartClick}>
           START
         </button>
@@ -86,27 +86,28 @@ const FlagList: React.FC = () => {
               {clickedEmojis.map((clickedEmoji, index) => (
                 <div key={index}>
                   {clickedEmoji.emoji},{' '}
-                  <strong>Дата та час натиску:</strong> {clickedEmoji.timestamp}
+                  <strong>Bording cross:</strong> {clickedEmoji.timestamp}
                 </div>
               ))}
             </h4>
           </li>
         </ul>
-     
-        <button className="end-route" onClick={handleEndClick}>
-          END
-        </button>
-
-        <input
-          type="text"
-          placeholder="NOTES"
-          value={comment}
-          onChange={handleCommentChange}
-          maxLength={200}
-        />
-        <button onClick={handleSubmitComment}>Submit</button>
-        {submittedComment && <p>Коментар: {submittedComment}</p>} 
-
+        <div className='end-button'>
+            <button className="end-route" onClick={handleEndClick}>
+                END
+            </button>
+        </div>
+        <div className='end-button'>
+            <input
+              type="text"
+              placeholder="NOTES"
+              value={comment}
+              onChange={handleCommentChange}
+              maxLength={200}
+            />
+            <button onClick={handleSubmitComment}>Submit</button>
+            {submittedComment && <p>Notes: {submittedComment}</p>} 
+        </div>
       </div>
       <div></div>
       <div className="flag-row">
