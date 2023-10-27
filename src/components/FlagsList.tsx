@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import data from './data.tsx';
 import './styles/FlagList.css';
+import './styles/Btns.css';
 
 interface Flag {
   id: number;
@@ -14,6 +15,7 @@ const FlagList: React.FC = () => {
   const [isRouteStarted, setIsRouteStarted] = useState(false);
   const [comment, setComment] = useState<string>('');
   const [submittedComment, setSubmittedComment] = useState<string | null>(null);
+  const [comments, setComments] = useState<string[]>([]); 
 
   const handleStartClick = () => { 
     setIsRouteStarted(true);
@@ -42,7 +44,7 @@ const FlagList: React.FC = () => {
 
   const handleSubmitComment = () => {
     if (comment.trim()) {
-      setSubmittedComment(comment);
+      setComments((prevComments) => [...prevComments, comment]); // Add the current comment to the comments array
       setComment('');
     }
   };
@@ -62,6 +64,8 @@ const FlagList: React.FC = () => {
     }
   };
 
+
+
   return (
     <div className="flag-list-section">
       <div className="flag-row">
@@ -80,55 +84,40 @@ const FlagList: React.FC = () => {
             </li>
           ))}
         </ul>
-        <ul>
+        <ul className='entered-countries-list'>
           <li>
             <h4>
               {clickedEmojis.map((clickedEmoji, index) => (
                 <div key={index}>
-                  {clickedEmoji.emoji},{' '}
-                  <strong>Bording cross:</strong> {clickedEmoji.timestamp}
+                  {clickedEmoji.emoji},{' '} 
+                  <strong>Border cross:</strong> {clickedEmoji.timestamp}
                 </div>
               ))}
             </h4>
           </li>
         </ul>
-        <div className='end-button'>
+        
             <button className="end-route" onClick={handleEndClick}>
                 END
             </button>
-        </div>
-        <div className='end-button'>
+        
+        <div className='input-section'>
             <input
+              className='input-place'
               type="text"
               placeholder="NOTES"
               value={comment}
               onChange={handleCommentChange}
-              maxLength={200}
+              maxlength={50}
             />
-            <button onClick={handleSubmitComment}>Submit</button>
-            {submittedComment && <p>Notes: {submittedComment}</p>} 
+            <button className='input-btn' onClick={handleSubmitComment}>ADD</button>
+
         </div>
+        <div className="submitted-comments">
+        {comments.map((comment, index) => (
+          <p key={index}>Notes: {comment}</p>
+        ))}
       </div>
-      <div></div>
-      <div className="flag-row">
-        <h2>Trasa Pl - Es</h2>
-        <button className="start-route" onClick={handleStartClick}>
-          START
-        </button>
-        <ul>
-          {data.trasaPlEs.map((flag, index) => (
-            <li
-              key={flag.id}
-              onClick={() => handleEmojiClick(flag.emoji)}
-              className={index === currentEmojiIndex ? 'active' : ''}
-            >
-              {flag.emoji}
-            </li>
-          ))}
-        </ul>
-        <button className="start-route" onClick={handleStartClick}>
-          START
-        </button>
       </div>
     </div>
   );
