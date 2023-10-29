@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/driver-app/static/css/main.0a97eb69.css",
+    "main.js": "/driver-app/static/js/main.ffbb57bc.js",
+    "static/js/787.f77cd04c.chunk.js": "/driver-app/static/js/787.f77cd04c.chunk.js",
+    "index.html": "/driver-app/index.html",
+    "main.0a97eb69.css.map": "/driver-app/static/css/main.0a97eb69.css.map",
+    "main.ffbb57bc.js.map": "/driver-app/static/js/main.ffbb57bc.js.map",
+    "787.f77cd04c.chunk.js.map": "/driver-app/static/js/787.f77cd04c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0a97eb69.css",
+    "static/js/main.ffbb57bc.js"
+  ]
+}
